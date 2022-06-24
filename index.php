@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['user'] = '';
 /*
 這次做的練習是首頁練習
 遇到的問題是echo中html語法要嵌入php變數遇到的問題
@@ -75,7 +74,9 @@ if ($conn->connect_error) {
 </html> <!-- 這邊是網頁的html -->
 <?php
 
-if($_SESSION['user'] == 'ok'){
+if (is_set($_SESSION)){
+  if($_SESSION['user'] == 'ok'){
     echo "<a href='logout.php'>登出</a>";
+  }
 }
 $conn->close(); //結束搜尋即關掉資料庫連線
