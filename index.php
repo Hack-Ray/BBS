@@ -74,7 +74,7 @@ if ($conn->connect_error) {
 </html> <!-- 這邊是網頁的html -->
 <?php
 
-if (isset($_SESSION)){
+if (isset($_SESSION['user'])){
   if($_SESSION['user'] == 'ok'){
     echo "<a href='logout.php'>登出</a>";
   }
